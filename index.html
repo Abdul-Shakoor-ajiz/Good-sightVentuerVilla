@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Student Grading System</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header><div class="wrap"><h1>Student Grading System</h1><p>50 students · 7 subjects · Maximum marks: 1,100</p></div></header>
+<main>
+<section class="cards">
+  <div class="card"><span>Total students</span><strong id="totalStudents">50</strong></div>
+  <div class="card"><span>Passed</span><strong id="passedCount">43</strong></div>
+  <div class="card"><span>Failed</span><strong id="failedCount">7</strong></div>
+  <div class="card"><span>Class average</span><strong id="average">—</strong></div>
+  <div class="card"><span>Highest marks</span><strong id="highest">—</strong></div>
+</section>
+<section class="panel">
+<h2>Grade criteria</h2>
+<div class="rules">
+<div class="rule"><b>Fail</b>Below 300</div>
+<div class="rule"><b>Grade D</b>450–549</div>
+<div class="rule"><b>Grade C</b>550–749</div>
+<div class="rule"><b>Grade B</b>750–999</div>
+<div class="rule"><b>Grade A</b>1,000–1,099</div>
+<div class="rule"><b>Grade A+</b>1,100</div>
+</div>
+<!-- <p class="note">As requested, the sample class has 3 Fail, 10 Grade D, 8 Grade C, 15 Grade B, 10 Grade A and 4 Grade A+ students. The 300–449 range is left unassigned by the supplied cutoffs; the sample data avoids that range. Update the grade rules in the JavaScript if you want to assign it.</p> -->
+</section>
+<section class="panel">
+<h2>Student records</h2>
+<div class="controls">
+<input id="search" type="search" placeholder="Search student name or ID">
+<select id="gradeFilter" aria-label="Filter by grade">
+<option value="all">All grades</option><option value="Fail">Fail</option><option value="D">Grade D</option><option value="C">Grade C</option><option value="B">Grade B</option><option value="A">Grade A</option><option value="Aplus">Grade A+</option><option value="Unassigned">Unassigned range</option>
+</select>
+<button id="addBtn" type="button">Add student</button>
+<!-- <button id="csvBtn" type="button" class="secondary">Export CSV</button> -->
+<button id="printBtn" type="button" class="secondary">Print results</button>
+</div>
+<p id="message" class="error" role="status"></p>
+<div class="table-wrap"><table>
+<thead><tr><th>ID</th><th>Student name</th><th>Biology</th><th>Chemistry</th><th>Physics</th><th>English</th><th>Math</th><th>Biotechnology</th><th>IR</th><th>Total / 1100</th><th>Grade</th></tr></thead>
+<tbody id="studentRows">
+  
+</tbody>
+</table></div>
+<!-- <p class="note">Edit a student's name or marks directly in the table. Each of the 7 subject marks is out of 100; the total is calculated automatically out of 700? No — the requested maximum is 1,100, so enter marks across the 7 subject fields with a combined maximum of 1,100. Subject fields accept up to 200 marks each.</p> -->
+</section>
+</main>
+
+<script src="java.js"></script>
+</body>
+</html>
